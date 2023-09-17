@@ -44,7 +44,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
+      - run: pnpm install --no-frozen-lockfile
       - run: cd ui && pnpm install --no-frozen-lockfile
-      - run: pnpm run build
+      - run: cd ui && pnpm run build
       # - run: pnpm run dev --if-present
       # - run: ponpm test
